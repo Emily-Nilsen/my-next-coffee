@@ -55,8 +55,9 @@ const CoffeeStore = (initialProps) => {
 
   const id = router.query.id;
 
-  const [coffeeStore, setCoffeeStore] =
-    useState(initialProps.coffeeStore) || {};
+  const [coffeeStore, setCoffeeStore] = useState(
+    initialProps.coffeeStore || {}
+  );
 
   const {
     state: { coffeeStores },
@@ -170,13 +171,13 @@ const CoffeeStore = (initialProps) => {
   }
 
   return (
-    <div className="bg-coffee-green bg-coffee-pattern bg-cover bg-center">
+    <div className="bg-center bg-cover bg-coffee-green bg-coffee-pattern">
       <Head>
         <title>{name}</title>
       </Head>
 
-      <div className="container mx-auto grid px-10 pt-10 pb-4 sm:p-8 md:px-20 lg:w-1/2">
-        <div className="mx-auto w-1/2 sm:pt-10">
+      <div className="container grid px-10 pt-10 pb-4 mx-auto sm:p-8 md:px-20 lg:w-1/2">
+        <div className="w-1/2 mx-auto sm:pt-10">
           <Image
             src="/static/coffee-logo.svg"
             alt="My Next Coffee Logo"
@@ -188,7 +189,7 @@ const CoffeeStore = (initialProps) => {
 
         <Link href="/">
           <a>
-            <div className="text-coffee-300 font-normal mt-4 mb-10 text-xl hover:text-white transition ease-in-out duration-200">
+            <div className="mt-4 mb-10 text-xl font-normal transition duration-200 ease-in-out text-coffee-300 hover:text-white">
               <h2>
                 <span>
                   <FontAwesomeIcon className="mr-2" icon={faArrowLeftLong} />
@@ -196,7 +197,7 @@ const CoffeeStore = (initialProps) => {
                 Go back{' '}
                 <span>
                   <FontAwesomeIcon
-                    className="text-2xl pl-2 "
+                    className="pl-2 text-2xl "
                     icon={faCoffeeBeans}
                   />
                 </span>
@@ -206,8 +207,8 @@ const CoffeeStore = (initialProps) => {
         </Link>
 
         <div className="container mx-auto sm:mb-10">
-          <div className="grid grid-cols-1 grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 md:grid-cols-3 justify-items-stretch rounded-lg mb-10 w-full overflow-hidden">
-            <div className="w-full sm:rounded-l-lg overflow-hidden relative md:col-span-2">
+          <div className="grid w-full grid-cols-1 grid-rows-2 mb-10 overflow-hidden rounded-lg sm:grid-rows-1 sm:grid-cols-2 md:grid-cols-3 justify-items-stretch">
+            <div className="relative w-full overflow-hidden sm:rounded-l-lg md:col-span-2">
               <Image
                 src={
                   imgUrl ||
@@ -219,20 +220,20 @@ const CoffeeStore = (initialProps) => {
                 objectPosition="center"
               />
             </div>
-            <div className="flex flex-col items-start justify-between p-8 sm:px-6 bg-white rounded-b-lg sm:rounded-none sm:rounded-r-lg">
+            <div className="flex flex-col items-start justify-between p-8 bg-white rounded-b-lg sm:px-6 sm:rounded-none sm:rounded-r-lg">
               <div>
-                <h1 className="text-coffee-green sm:mt-6 mb-8 text-2xl">
+                <h1 className="mb-8 text-2xl text-coffee-green sm:mt-6">
                   {name}
                 </h1>
               </div>
-              <div className="mb-4 flex flex-col justify-evenly">
-                <h2 className="text-coffee-600 font-normal pb-2">
+              <div className="flex flex-col mb-4 justify-evenly">
+                <h2 className="pb-2 font-normal text-coffee-600">
                   {neighbourhood}
                 </h2>
-                <p className="text-coffee-600 font-light">{address}</p>
+                <p className="font-light text-coffee-600">{address}</p>
                 <div className="flex flex-col pt-8">
                   <div>
-                    <p className="text-coffee-600 font-normal text-lg pb-4">
+                    <p className="pb-4 text-lg font-normal text-coffee-600">
                       <FontAwesomeIcon
                         className="mr-2"
                         icon={faPersonWalking}
@@ -244,7 +245,7 @@ const CoffeeStore = (initialProps) => {
                         : distance + ' m'}
                     </p>
                   </div>
-                  <div className="text-coffee-600 text-lg font-normal ">
+                  <div className="text-lg font-normal text-coffee-600 ">
                     <p>
                       <FontAwesomeIcon className="mr-2" icon={fasFaCoffee} />
                       {votingCount}
@@ -254,7 +255,7 @@ const CoffeeStore = (initialProps) => {
 
                 <button
                   onClick={handleUpvoteButton}
-                  className="mt-8 bg-coffee-50 rounded-full py-3 px-6 text-coffee-600 hover:text-coffee-50 hover:bg-coffee-600 transition ease-in-out duration-200 min-w-min"
+                  className="px-6 py-3 mt-8 transition duration-200 ease-in-out rounded-full bg-coffee-50 text-coffee-600 hover:text-coffee-50 hover:bg-coffee-600 min-w-min"
                 >
                   <p>
                     <span className="text-red-400">
