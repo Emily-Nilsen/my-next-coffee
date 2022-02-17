@@ -177,7 +177,7 @@ const CoffeeStore = (initialProps) => {
       </Head>
 
       <div className="container grid px-10 pt-10 pb-4 mx-auto sm:p-8 md:px-20 lg:w-1/2">
-        <div className="w-1/2 mx-auto sm:pt-10">
+        <div className="mx-auto sm:pt-10">
           <Image
             src="/static/coffee-logo.svg"
             alt="My Next Coffee Logo"

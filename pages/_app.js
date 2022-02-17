@@ -15,12 +15,23 @@ import {
   faHeart as farFaHeart,
 } from '@fortawesome/pro-regular-svg-icons';
 library.add(fab, fasFaCoffee, farFaCoffee, fasFaHeart, farFaHeart);
+import { motion } from 'framer-motion';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   return (
     <StoreProvider>
-      <Component {...pageProps} />
-      <Footer />
+      <motion.div
+        key={router.route}
+        initial="pageInitial"
+        animate="pageAnimate"
+        variants={{
+          pageInitial: { opacity: 0 },
+          pageAnimate: { opacity: 1, transition: { delay: 0.4 } },
+        }}
+      >
+        <Component {...pageProps} />
+        <Footer />
+      </motion.div>
     </StoreProvider>
   );
 }
