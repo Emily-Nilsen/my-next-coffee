@@ -61,7 +61,7 @@ export default function Home(props) {
   return (
     <div>
       <Head>
-        <title>My Next Coffee | Home</title>
+        <title>My Next Coffee</title>
         <meta
           name="description"
           content="Find coffee shops and cafés close to you!"
