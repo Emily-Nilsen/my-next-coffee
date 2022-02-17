@@ -62,6 +62,10 @@ export default function Home(props) {
     <div>
       <Head>
         <title>My Next Coffee | Home</title>
+        <meta
+          name="description"
+          content="Find coffee shops and cafés close to you!"
+        />
       </Head>
       <main className="flex flex-col items-center justify-center pt-4 mx-auto bg-center bg-cover bg-coffee-green bg-coffee-pattern">
         <Banner
